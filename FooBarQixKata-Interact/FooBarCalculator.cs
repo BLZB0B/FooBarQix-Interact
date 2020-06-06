@@ -14,7 +14,7 @@ namespace FooBarQixKataInteract
         public string Compute(string input)
         {
 
-            var result = ReplaceByDivisors(input);
+            var result = ReplaceDivisors(input);
             result += ReplaceDigits(input);
 
             var resultOnlyHasStar = result.All(c => "*".Contains(c));
@@ -61,24 +61,28 @@ namespace FooBarQixKataInteract
             return result;
         }
 
-        private string ReplaceByDivisors(string input)
+        private string ReplaceDivisors(string input)
         {
             var result = "";
-            var number = Convert.ToInt16(input);
 
-            if (number % 3 == 0)
-            {
-                result += "Foo";
-            }
+            int number;
 
-            if (number % 5 == 0)
-            {
-                result += "Bar";
-            }
+            if (int.TryParse(input, out number))
+            { 
+                if (number % 3 == 0)
+                {
+                    result += "Foo";
+                }
 
-            if (number % 7 == 0)
-            {
-                result += "Qix";
+                if (number % 5 == 0)
+                {
+                    result += "Bar";
+                }
+
+                if (number % 7 == 0)
+                {
+                    result += "Qix";
+                }
             }
 
             return result;

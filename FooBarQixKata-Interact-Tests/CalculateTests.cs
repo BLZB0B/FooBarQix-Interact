@@ -49,6 +49,9 @@ namespace FooBarQixKataInteractTests
                     yield return new TestCaseData("303").Returns("FooFoo*Foo");
                     yield return new TestCaseData("105").Returns("FooBarQix*Bar");
                     yield return new TestCaseData("10101").Returns("FooQix**");
+                    yield return new TestCaseData("Invalid String Input").Returns("Invalid String Input");
+                    yield return new TestCaseData("Invalid String Input with 00").Returns("Invalid String Input with **");
+
                 }
             }
         }
