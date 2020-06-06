@@ -22,7 +22,7 @@ namespace FooBarQixKataInteractTests
             _fooBarCalculator = new FooBarCalculator();
         }
 
-        public class MyDataClass
+        public class TestData
         {
             public static IEnumerable TestCases
             {
@@ -55,7 +55,7 @@ namespace FooBarQixKataInteractTests
             }
         }
 
-        [TestCaseSource(typeof(MyDataClass), "TestCases")]
+        [TestCaseSource(typeof(TestData), "TestCases")]
         public string Tests(string input)
         {
             return _fooBarCalculator.Compute(input);
