@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace FooBarQixKataInteract
 {
@@ -16,12 +17,20 @@ namespace FooBarQixKataInteract
             var result = ReplaceByDivisors(input);
             result += ReplaceDigits(input);
 
-            if (string.IsNullOrEmpty(result))
+            var resultOnlyHasStar = result.All(c => "*".Contains(c));
+
+            if (string.IsNullOrEmpty(result) || resultOnlyHasStar)
             {
-                result = input;
+
+                result = Replace0InNumber(input);
             }
 
             return result;
+        }
+
+        private string Replace0InNumber(string input)
+        {
+            return input.Replace('0', '*');
         }
 
         private string ReplaceDigits(string input)
@@ -40,6 +49,9 @@ namespace FooBarQixKataInteract
                         break;
                     case '7':
                         result += "Qix";
+                        break;
+                    case '0':
+                        result += "*";
                         break;
                     default:
                         break;

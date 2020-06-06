@@ -38,13 +38,17 @@ namespace FooBarQixKataInteractTests
                     yield return new TestCaseData("7").Returns("QixQix");
                     yield return new TestCaseData("8").Returns("8");
                     yield return new TestCaseData("9").Returns("Foo");
-                    yield return new TestCaseData("10").Returns("Bar");
+                    yield return new TestCaseData("10").Returns("Bar*");
                     yield return new TestCaseData("13").Returns("Foo");
                     yield return new TestCaseData("15").Returns("FooBarBar");
                     yield return new TestCaseData("21").Returns("FooQix");
                     yield return new TestCaseData("33").Returns("FooFooFoo");
                     yield return new TestCaseData("51").Returns("FooBar");
                     yield return new TestCaseData("53").Returns("BarFoo");
+                    yield return new TestCaseData("101").Returns("1*1");
+                    yield return new TestCaseData("303").Returns("FooFoo*Foo");
+                    yield return new TestCaseData("105").Returns("FooBarQix*Bar");
+                    yield return new TestCaseData("10101").Returns("FooQix**");
                 }
             }
         }
